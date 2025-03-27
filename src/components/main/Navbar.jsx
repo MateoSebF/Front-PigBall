@@ -1,12 +1,10 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import {
   Box,
   Typography,
   IconButton,
-  useTheme,
-  useMediaQuery,
   AppBar,
   Toolbar,
   Tooltip,
