@@ -7,7 +7,6 @@ import {
   Typography,
   Button,
   IconButton,
-  useTheme,
   Dialog,
   DialogTitle,
   DialogContent,
