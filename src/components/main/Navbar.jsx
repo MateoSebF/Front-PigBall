@@ -16,32 +16,18 @@ import {
   Home,
   Logout,
 } from "@mui/icons-material"
-import { motion } from "framer-motion"
 import { useMsal } from "@azure/msal-react";
-import { usePlayerStats } from "../user/playerStats"
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
-    const playerStats = usePlayerStats();
     const navigation = useNavigate();
-    const [anchorEl, setAnchorEl] = useState(null)
-    const open = Boolean(anchorEl)
-    const muiTheme = useTheme()
-    const isMobile = useMediaQuery(muiTheme.breakpoints.down("md"))
     const { instance } = useMsal();
     
     const handleLogout = async () => {
       await instance.logoutPopup();
       navigation("/");
     };
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget)
-    }
 
-    const handleClose = () => {
-        setAnchorEl(null)
-
-    }
     const handleGoHome = () => {
       navigation("homepage");
     }

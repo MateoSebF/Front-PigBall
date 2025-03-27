@@ -1,4 +1,4 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles"
+import { createTheme } from "@mui/material/styles"
 // Create a custom theme with blue and yellow colors
 export const Theme = createTheme({
   palette: {

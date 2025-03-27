@@ -45,19 +45,3 @@ export const Login = () => {
     </>
   );
 };
-
-/*// Componente de jugador (círculos de colores)
-const Player = ({ color, sx }) => (
-  <Box
-    sx={{
-      position: "absolute",
-      width: "70px",
-      height: "70px",
-      borderRadius: "50%",
-      border: "3px solid black",
-      backgroundColor: color,
-      zIndex: 2,
-      ...sx,
-    }}
-  />
-);*/

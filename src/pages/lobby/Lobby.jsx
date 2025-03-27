@@ -35,7 +35,6 @@ export const Lobby = () => {
 
     const updateRooms = async () => {
       setRooms(await getGames())
-      setRooms(rooms)
       setIsRefreshing(false)
     }
     updateRooms()
@@ -90,7 +89,6 @@ export const Lobby = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            borderBottom: 1,
             borderColor: "divider",
             borderBottom: "2px solid #4CAF50",
             background: "linear-gradient(to right,rgb(69, 138, 55),rgb(90, 153, 82))",

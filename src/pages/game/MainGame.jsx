@@ -151,7 +151,7 @@ export const MainGame = () => {
 
   return (
     <main className="overflow-hidden p-0 m-0">
-      <style jsx global>{`
+      <style>{`
         html, body {
           margin: 0;
           padding: 0;

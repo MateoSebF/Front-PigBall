@@ -34,7 +34,7 @@ import { motion } from "framer-motion"
 export default function RoomList({ gameRooms }) {
   const [rooms, setRooms] = useState(gameRooms);
   const [filteredRooms, setFilteredRooms] = useState([]);
-  const searchTerm = useState("");// const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const theme = useTheme();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function RoomList({ gameRooms }) {
 
   useEffect(() => {
     console.log("Updated Rooms:", rooms);
-
+    setSearchTerm("camila");
     // Filtrar salas según el término de búsqueda
     const filtered = rooms.filter(
       (room) =>
