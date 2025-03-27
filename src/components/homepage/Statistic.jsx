@@ -1,4 +1,6 @@
 "use client"
+
+import PropTypes from 'prop-types';
 import { green } from '@mui/material/colors';
 import {
   Typography,
@@ -20,14 +22,14 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from 'react';
 export default function Statistic ({matchesPlayed,matchesWon,matchesLost,score,winRate }) {
-  const [countMatches, setCountPlayed] = useState(0);
+  const [countMatches, setCountMatches] = useState(0);
   const [countWon, setCountWon] = useState(0);
   const [countLost, setCountLost] = useState(0);
   const [countScore, setCountScore] = useState(0);
   const [countWin, setCountWin] = useState(0);
 
   useEffect(() => {
-    animation(matchesPlayed,setCountPlayed)
+    animation(matchesPlayed,setCountMatches)
   }, [matchesPlayed]);
   useEffect(() => {
     animation(matchesWon,setCountWon)
@@ -235,3 +237,11 @@ export default function Statistic ({matchesPlayed,matchesWon,matchesLost,score,w
         </Grid>
     )
 }
+
+Statistic.propTypes = {
+  matchesPlayed: PropTypes.number.isRequired,
+  matchesWon: PropTypes.number.isRequired,
+  matchesLost: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+  winRate: PropTypes.number.isRequired,
+};

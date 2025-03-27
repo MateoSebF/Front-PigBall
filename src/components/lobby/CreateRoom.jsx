@@ -1,4 +1,6 @@
 "use client"
+import PropTypes from 'prop-types';
+
 import React, { useState } from "react"
 import {
   Box,
@@ -31,7 +33,7 @@ import { usePlayerStats } from "../../components/user/playerStats";
 export const CreateRoom = ({OpenDialog,CloseDialog}) => {
     const playerStats = usePlayerStats();
     const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+    // const isMobile = useMediaQuery(theme.breakpoints.down("md"))
     const [newRoom, setNewRoom] = useState({
       name: "",
       isPrivate: false,
@@ -308,3 +310,8 @@ export const CreateRoom = ({OpenDialog,CloseDialog}) => {
   </Dialog>
   )
 }
+
+CreateRoom.propTypes = {
+  OpenDialog: PropTypes.bool.isRequired,  // OpenDialog should be a boolean and is required
+  CloseDialog: PropTypes.func.isRequired, // CloseDialog should be a function and is required
+};

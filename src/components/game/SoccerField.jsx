@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import PropTypes from 'prop-types';
 
 export const SoccerField = ({players}) => {
   const canvasRef = useRef(null);
@@ -181,6 +182,12 @@ for (let i = -fieldWidth; i < fieldWidth; i += stripeWidth) {
   });
 }
 
-
-
-
+SoccerField.propTypes = {
+  players: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+      team: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

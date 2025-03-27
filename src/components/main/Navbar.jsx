@@ -1,23 +1,10 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState } from "react"
 import {
   Box,
   Typography,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  Avatar,
   IconButton,
-  Paper,
-  Divider,
-  Chip,
-  TextField,
-  InputAdornment,
-  CircularProgress,
   useTheme,
   useMediaQuery,
   AppBar,
@@ -25,17 +12,7 @@ import {
   Tooltip,
 } from "@mui/material"
 import {
-  Add,
-  Refresh,
-  Search,
   SportsSoccer,
-  Public,
-  Lock,
-  Star,
-  StarBorder,
-  People,
-  EmojiEvents,
-  AccessTime,
   Home,
   Logout,
 } from "@mui/icons-material"

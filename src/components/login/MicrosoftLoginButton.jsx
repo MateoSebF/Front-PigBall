@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useMsal } from '@azure/msal-react';
-import { useNavigate } from 'react-router-dom';
 import { loginRequest } from '../../authConfig';
 import Button from "@mui/material/Button";
 
 
 export const MicrosoftLoginButton = () => {
     const { instance } = useMsal();
-    const navigate = useNavigate(); 
     const handleLogin = async () => {
             instance.loginPopup(loginRequest).catch((e) => console.error(e));
     };

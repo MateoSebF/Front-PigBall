@@ -1,6 +1,9 @@
 "use client"
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+import PropTypes from 'prop-types';
+
 import {
   Box,
   Typography,
@@ -31,7 +34,7 @@ import { motion } from "framer-motion"
 export default function RoomList({ gameRooms }) {
   const [rooms, setRooms] = useState(gameRooms);
   const [filteredRooms, setFilteredRooms] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchTerm = useState("");// const [searchTerm, setSearchTerm] = useState("");
   const theme = useTheme();
 
   useEffect(() => {
@@ -249,3 +252,23 @@ export default function RoomList({ gameRooms }) {
 
 }
 
+RoomList.propTypes = {
+  gameRooms: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      gameName: PropTypes.string.isRequired,
+      creatorName: PropTypes.string.isRequired,
+      players: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired
+        })
+      ).isRequired,
+      maxPlayers: PropTypes.number.isRequired,
+      status: PropTypes.oneOf(["En espera", "En progreso", "Completa"]).isRequired,
+      privateGame: PropTypes.bool.isRequired,
+      isFavorite: PropTypes.bool.isRequired,
+      creationTime: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

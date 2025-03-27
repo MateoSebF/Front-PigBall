@@ -1,4 +1,5 @@
 "use client"
+import PropTypes from 'prop-types';
 import {
   Typography,
   Button,
@@ -53,3 +54,7 @@ export default function Character({name}) {
     )
 
 }
+
+Character.propTypes = {
+  name: PropTypes.string.isRequired,
+};
