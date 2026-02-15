@@ -10,7 +10,7 @@
         "@mui/icons-material": "^6.4.7",
         "@mui/material": "^6.4.7",
         "@stomp/stompjs": "^7.0.0",
-        "axios": "^1.8.4",
+        "axios": "^1.13.5",
         "framer-motion": "^12.5.0",
         "gsap": "^3.12.7",
         "prop-types": "^15.8.1",
